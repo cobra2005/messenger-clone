@@ -1,7 +1,7 @@
 'use client';
 
 import { useContext } from "react";
-import {VariantContext} from "@/app/providers/VariantProvider";
+import { VariantContext } from "@/app/providers/VariantProvider";
 
 export default function AuthHeading() {
   const { variant } = useContext(VariantContext);

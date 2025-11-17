@@ -18,7 +18,7 @@ const AuthForm = () => {
     } else {
       setVariant('LOGIN');
     }
-  }, [variant]);
+  }, [variant, setVariant]);
 
   const {
     register,
