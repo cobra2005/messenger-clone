@@ -6,11 +6,11 @@ import { useCallback, useContext, useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import AuthSocialButton from "./AuthSocialButton";
 import { BsGithub, BsGoogle } from "react-icons/bs";
-import { VariantContext } from "../page";
+import { VariantContext } from "@/app/providers/VariantProvider";
 
 const AuthForm = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const { variant, setVariant } = useContext(VariantContext)
+  const { variant, setVariant } = useContext(VariantContext);
 
   const toggleVariant = useCallback(() => {
     if(variant === 'LOGIN') {
