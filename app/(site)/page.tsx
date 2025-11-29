@@ -1,11 +1,11 @@
 import Image from "next/image";
 import AuthForm from "./components/AuthForm";
-import VariantProvider from "@/app/providers/VariantProvider";
+import VariantContext from "@/app/context/VariantContext";
 import AuthHeading from "@/app/(site)/components/AuthHeading";
 
 export default function Home() {
   return (
-    <VariantProvider>
+    <VariantContext>
       <div
         className="
           flex
@@ -30,6 +30,6 @@ export default function Home() {
         </div>
         <AuthForm />
       </div>
-    </VariantProvider>
+    </VariantContext>
   )
 }

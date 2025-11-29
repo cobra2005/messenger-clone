@@ -3,25 +3,25 @@
 import { createContext, Dispatch, ReactNode, SetStateAction, useState } from "react";
 
 type Variant = 'LOGIN' | 'REGISTER';
-type VariantContext = {
+type VariantStateContextType = {
   variant: Variant;
   setVariant: Dispatch<SetStateAction<Variant>>;
 };
-type VariantProviderProps = {
+type VariantContextProps = {
   children: ReactNode;
 }
 
-export const VariantContext = createContext<VariantContext>({
+export const VariantStateContext = createContext<VariantStateContextType>({
   variant: 'LOGIN',
   setVariant: () => {}
 });
 
-export default function VariantProvider({ children }: VariantProviderProps) {
+export default function VariantContext({ children }: VariantContextProps) {
   const [variant, setVariant] = useState<Variant>('LOGIN');
 
   return (
-    <VariantContext.Provider value={{ variant, setVariant }}>
+    <VariantStateContext.Provider value={{ variant, setVariant }}>
       {children}
-    </VariantContext.Provider>
+    </VariantStateContext.Provider>
   )
 }

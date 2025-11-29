@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
+import { FC } from "react";
 
 interface InputProps {
   label: string;
@@ -14,7 +15,7 @@ interface InputProps {
   placeholder?: string;
 }
 
-const Input: React.FC<InputProps> = ({
+const Input: FC<InputProps> = ({
   label,
   id,
   type,
