@@ -60,6 +60,8 @@ const AuthForm = () => {
             toaster.create({
               title: 'Account created successfully!',
               type: 'success',
+              closable: true,
+              duration: 3000,
             })
           }, 400)
         })
@@ -68,6 +70,8 @@ const AuthForm = () => {
             toaster.create({
               title: 'Something went wrong!',
               type: 'error',
+              closable: true,
+              duration: 3000,
             })
           }, 400)
         })
@@ -86,6 +90,7 @@ const AuthForm = () => {
               toaster.create({
                 title: 'Invalid Credentials!',
                 type: 'error',
+                closable: true,
               })
             }, 400)
           }
@@ -94,6 +99,7 @@ const AuthForm = () => {
               toaster.create({
                 title: 'Logged in successfully!',
                 type: 'success',
+                closable: true,
               })
             }, 400)
           }
@@ -112,14 +118,6 @@ const AuthForm = () => {
             toaster.create({
               title: 'Invalid Credentials!',
               type: 'error',
-            })
-          }, 400)
-        }
-        if(callback?.ok) {
-          setTimeout(() => {
-            toaster.create({
-              title: 'Logged in successfully!',
-              type: 'success',
             })
           }, 400)
         }
