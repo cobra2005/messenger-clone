@@ -1,8 +1,9 @@
 'use client';
 
+import axios from "axios";
 import Button from "@/app/components/Button";
 import Input from "@/app/components/inputs/Input";
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import AuthSocialButton from "./AuthSocialButton";
 import { BsGithub, BsGoogle } from "react-icons/bs";
@@ -13,9 +14,9 @@ const AuthForm = () => {
   const [variant, setVariant] = useState<Variant>('LOGIN');
   const [isLoading, setIsLoading] = useState(false);
 
-  const toggleVariant = useCallback(() => {
+  const toggleVariant = () => {
     setVariant((currentVariant: Variant) => currentVariant === 'LOGIN' ? 'REGISTER' : 'LOGIN');
-  }, [variant]);
+  };
 
   const {
     register,
@@ -35,7 +36,7 @@ const AuthForm = () => {
     setIsLoading(true);
 
     if (variant === 'REGISTER') {
-      // Axios Register
+      axios.post('/api/register', data)
     }
 
     if (variant === 'LOGIN') {
